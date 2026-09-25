@@ -9,8 +9,8 @@ const Star = (props: { fillFraction: number }) => <CentredColumn style={{
     overflow: 'hidden',
     position: 'relative'
 }}>
-    <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: `${props.fillFraction * 100}%`, backgroundColor: '#fddc47'}}></div>
-    <img src={starWhite} alt={'Star rating'} style={{ zIndex: 1, padding: '0.5rem' }}/>
+    <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: `${props.fillFraction * 100}%`, backgroundColor: 'rgba(255, 209, 0, 1)'}}></div>
+    <img src={starWhite} alt={' '} style={{ zIndex: 1, padding: '0.5rem' }}/>
 </CentredColumn>
 
 const getStarFilledFractions = (averageRating: number | undefined)=> {

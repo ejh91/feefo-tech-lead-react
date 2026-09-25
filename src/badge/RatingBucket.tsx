@@ -34,13 +34,14 @@ export const RatingBucket = (props: {
     return <>
         <CentredRow style={leftStyle}>
             <CentredRow style={{ gap: '0.5rem' }} ref={leftInnerRef}>
-                <span style={{fontWeight: 'bold'}}>{props.bucket}</span><img width="21px" height="21px" src={starLightGrey} alt={'Star logo'}/>
+                <span style={{fontWeight: 'bold'}}>{props.bucket}</span><img width="21px" height="21px" src={starLightGrey} alt={' '}/>
             </CentredRow>
         </CentredRow>
         <CentredRow style={{justifyContent: 'left', width: '100%', backgroundColor: 'lightgrey', height: '8px', borderRadius: '2px'}}
                     aria-label={`${props.bucket}-star reviews: ${props.bucketRatings}`}
+                    role="img"
         >
-            <CentredRow style={{width: `${bucketPercentage}%`, backgroundColor: '#fddc47', height: '8px', borderRadius: '2px'}} />
+            <CentredRow style={{width: `${bucketPercentage}%`, backgroundColor: 'rgba(255, 209, 0, 1)', height: '8px', borderRadius: '2px'}} />
         </CentredRow>
         <CentredRow ref={rightRef} style={rightStyle}>{props.bucketRatings}</CentredRow>
     </>;

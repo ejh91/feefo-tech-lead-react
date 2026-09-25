@@ -34,5 +34,5 @@ export const RatingDescription = (props: {
     averageRating: number | undefined
 })=> {
     const ratingDesc = getRatingDesc(props.averageRating);
-    return <RatingHeader aria-label={"Overall rating"}>{ratingDesc}</RatingHeader>;
+    return <RatingHeader aria-label={'Overall rating'}>{ratingDesc}</RatingHeader>;
 }

@@ -49,14 +49,18 @@ export const Badge = (props: {
     const averageRating = totalScore / ratingsCount;
 
     return (
-        <CentredColumn style={{
-            margin: '4rem',
-            padding: '2rem',
-            border: '2px solid lightgrey',
-            borderRadius: '20px',
-            width: 'fit-contents',
-            gap: '1rem'
-        }}>
+        <CentredColumn
+            style={{
+                margin: '4rem',
+                padding: '2rem',
+                border: '2px solid lightgrey',
+                borderRadius: '20px',
+                width: 'fit-contents',
+                gap: '1rem'
+            }}
+            role={"region"}
+            aria-label={"Feefo ratings badge"}
+        >
             <RatingDescription averageRating={averageRating} />
             <StarRating averageRating={averageRating} />
             <RatingSummary averageRating={averageRating} />
