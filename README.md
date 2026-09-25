@@ -24,6 +24,11 @@ Individual rank buckets should be labelled as '5-star reviews: <count>' etc.
  - fixed width on them all
  - each fill percentage is calculated as the bucket total as % of the sum across all buckets
 
+Runs as a Storybook component so you can mess round with the numbers and see the changes take effect:
+ - `storybook dev -p 6006`
+
 Limitations:
  - Sampling of unit tests rather than exhaustive.
  - Not got every colour exactly right, and had to guess at the other rating level descriptions.
+ - Have used styled components where I'm actually repeating patterns a lot.
+   - Fixed styles for the one-off components or minor variations to/extensions of a styled component
