@@ -23,9 +23,9 @@ const getRatingDesc = (averageRating: number | undefined) => {
     return 'Dreadful'
 }
 
-const RatingHeader = styled.h1`
+const RatingHeader = styled.h2`
     text-transform: uppercase;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.25rem;
     color: #474344;
     margin: 0;
 `;
