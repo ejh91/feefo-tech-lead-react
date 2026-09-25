@@ -62,11 +62,19 @@ export const Badge = (props: {
             <RatingSummary averageRating={averageRating} />
             <CentredRow style={{ gap: '0.5rem', fontWeight: 'bold' }}>Product Rating <img src={feefoLogo} alt={'Feefo'} width={100}/></CentredRow>
             <CentredColumn style={{ width: '100%' }}>
-                <RatingBucket bucketRatings={props.ratings5Star} bucket={5} ratingsCount={ratingsCount} />
-                <RatingBucket bucketRatings={props.ratings4Star} bucket={4} ratingsCount={ratingsCount} />
-                <RatingBucket bucketRatings={props.ratings3Star} bucket={3} ratingsCount={ratingsCount} />
-                <RatingBucket bucketRatings={props.ratings2Star} bucket={2} ratingsCount={ratingsCount} />
-                <RatingBucket bucketRatings={props.ratings1Star} bucket={1} ratingsCount={ratingsCount} />
+                <div style={{
+                    display: "grid",
+                    width: '100%',
+                    gridTemplateColumns: "auto 1fr auto",
+                    columnGap: '1rem',
+                    alignItems: 'center'
+                }}>
+                    <RatingBucket bucketRatings={props.ratings5Star} bucket={5} ratingsCount={ratingsCount} />
+                    <RatingBucket bucketRatings={props.ratings4Star} bucket={4} ratingsCount={ratingsCount} />
+                    <RatingBucket bucketRatings={props.ratings3Star} bucket={3} ratingsCount={ratingsCount} />
+                    <RatingBucket bucketRatings={props.ratings2Star} bucket={2} ratingsCount={ratingsCount} />
+                    <RatingBucket bucketRatings={props.ratings1Star} bucket={1} ratingsCount={ratingsCount} />
+                </div>
             </CentredColumn>
         </CentredColumn>
     );

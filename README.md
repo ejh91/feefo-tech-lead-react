@@ -26,5 +26,4 @@ Individual rank buckets should be labelled as '5-star reviews: <count>' etc.
 
 Limitations:
  - Sampling of unit tests rather than exhaustive.
- - Should probably be a grid layout for the bucket breakdown section so the right-hand column is guaranteed a consistent width
  - Not got every colour exactly right, and had to guess at the other rating level descriptions.

@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { CentredRow } from "../layout/CentredRow";
 import starLightGrey from '../assets/feefo_star_lightgrey.svg';
+import useMeasure from 'react-use-measure';
 
 const getBucketPercentageOfTotal = (bucketRatings: number, ratingsCount: number) => {
     if (ratingsCount === 0) {
@@ -14,12 +15,31 @@ export const RatingBucket = (props: {
     bucket: number,
     ratingsCount: number
 })=> {
+    const [leftInnerRef, leftInnerBounds] = useMeasure();
+    const [rightRef, rightBounds] = useMeasure();
+    const leftStyle = useMemo(() => {
+        return {
+            justifyContent: 'end',
+            minWidth: Math.max(rightBounds.width)
+        }
+    }, [rightBounds.width])
+    const rightStyle = useMemo(() => {
+        return {
+            justifyContent: 'start',
+            minWidth: Math.max(leftInnerBounds.width)
+        }
+    }, [leftInnerBounds.width])
+
     const bucketPercentage = useMemo(() => getBucketPercentageOfTotal(props.bucketRatings, props.ratingsCount), [props.bucketRatings, props.ratingsCount]);
-    return <CentredRow style={{flex: 1, width: '100%', gap: '1rem'}} aria-label={`${props.bucket}-star reviews: ${props.bucketRatings}`}>
-        <CentredRow><span style={{width: '20px', fontWeight: 'bold'}}>{props.bucket}</span><img width="21px" height="21px" src={starLightGrey} alt={'Star logo'}/></CentredRow>
+    return <>
+        <CentredRow style={leftStyle}>
+            <CentredRow style={{ gap: '0.5rem' }} ref={leftInnerRef}>
+                <span style={{fontWeight: 'bold'}}>{props.bucket}</span><img width="21px" height="21px" src={starLightGrey} alt={'Star logo'}/>
+            </CentredRow>
+        </CentredRow>
         <CentredRow style={{justifyContent: 'left', width: '100%', backgroundColor: 'lightgrey', height: '8px', borderRadius: '2px'}}>
             <CentredRow style={{width: `${bucketPercentage}%`, backgroundColor: '#fddc47', height: '8px', borderRadius: '2px'}} />
         </CentredRow>
-        <span style={{width: '70px'}}>{props.bucketRatings}</span>
-    </CentredRow>
+        <CentredRow ref={rightRef} style={rightStyle}>{props.bucketRatings}</CentredRow>
+    </>;
 }
