@@ -28,4 +28,3 @@ Limitations:
  - Sampling of unit tests rather than exhaustive.
  - Should probably be a grid layout for the bucket breakdown section so the right-hand column is guaranteed a consistent width
  - Not got every colour exactly right, and had to guess at the other rating level descriptions.
- - Should probably trim the X out of 5 when it's a whole number so we don't show e.g. 4.0 out of 5
