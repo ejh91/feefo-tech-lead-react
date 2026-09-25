@@ -37,7 +37,9 @@ export const RatingBucket = (props: {
                 <span style={{fontWeight: 'bold'}}>{props.bucket}</span><img width="21px" height="21px" src={starLightGrey} alt={'Star logo'}/>
             </CentredRow>
         </CentredRow>
-        <CentredRow style={{justifyContent: 'left', width: '100%', backgroundColor: 'lightgrey', height: '8px', borderRadius: '2px'}}>
+        <CentredRow style={{justifyContent: 'left', width: '100%', backgroundColor: 'lightgrey', height: '8px', borderRadius: '2px'}}
+                    aria-label={`${props.bucket}-star reviews: ${props.bucketRatings}`}
+        >
             <CentredRow style={{width: `${bucketPercentage}%`, backgroundColor: '#fddc47', height: '8px', borderRadius: '2px'}} />
         </CentredRow>
         <CentredRow ref={rightRef} style={rightStyle}>{props.bucketRatings}</CentredRow>

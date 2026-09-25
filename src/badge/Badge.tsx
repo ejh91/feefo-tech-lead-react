@@ -60,7 +60,9 @@ export const Badge = (props: {
             <RatingDescription averageRating={averageRating} />
             <StarRating averageRating={averageRating} />
             <RatingSummary averageRating={averageRating} />
-            <CentredRow style={{ gap: '0.5rem', fontWeight: 'bold' }}>Product Rating <img src={feefoLogo} alt={'Feefo'} width={100}/></CentredRow>
+            <CentredRow style={{ gap: '0.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+                Product Rating <img src={feefoLogo} alt={'Feefo'} width={100}/>
+            </CentredRow>
             <CentredColumn style={{ width: '100%' }}>
                 <div style={{
                     display: "grid",
@@ -69,11 +71,11 @@ export const Badge = (props: {
                     columnGap: '1rem',
                     alignItems: 'center'
                 }}>
-                    <RatingBucket bucketRatings={props.ratings5Star} bucket={5} ratingsCount={ratingsCount} />
-                    <RatingBucket bucketRatings={props.ratings4Star} bucket={4} ratingsCount={ratingsCount} />
-                    <RatingBucket bucketRatings={props.ratings3Star} bucket={3} ratingsCount={ratingsCount} />
-                    <RatingBucket bucketRatings={props.ratings2Star} bucket={2} ratingsCount={ratingsCount} />
-                    <RatingBucket bucketRatings={props.ratings1Star} bucket={1} ratingsCount={ratingsCount} />
+                    <RatingBucket key={'bucket5'} bucketRatings={props.ratings5Star} bucket={5} ratingsCount={ratingsCount} />
+                    <RatingBucket key={'bucket4'} bucketRatings={props.ratings4Star} bucket={4} ratingsCount={ratingsCount} />
+                    <RatingBucket key={'bucket3'} bucketRatings={props.ratings3Star} bucket={3} ratingsCount={ratingsCount} />
+                    <RatingBucket key={'bucket2'} bucketRatings={props.ratings2Star} bucket={2} ratingsCount={ratingsCount} />
+                    <RatingBucket key={'bucket1'} bucketRatings={props.ratings1Star} bucket={1} ratingsCount={ratingsCount} />
                 </div>
             </CentredColumn>
         </CentredColumn>
