@@ -1,2 +1,31 @@
-# feefo-tech-lead-react
-Feefo Tech Lead coding tasks
+Task:
+
+> Implement the design provided as a set of React components.
+> We would like to see
+> - The layout should grow/shrink sensibly with the viewport
+> - The design split into several components
+> - Usage of proptypes
+> - Unit tests covering your components
+> - a11y considered and relevant ARIA attributes added
+> 
+> Technical Notes
+> - The font family is Google font Poppins.
+> - Exact font size specification in components is not necessary, as long as the result is close to the design.
+> - Preference is the use of styled-components
+> - Use jest + testing library for unit tests
+> - Share a link to a GitHub repository
+
+Plan:
+Semantic HTML where possible but the ordering is a bit of a pain in the screenshot.
+'Excellent' might want an aria label to say it's the overall rating
+'4.6 out of 5' might want an aria label to say it's the average score
+'Product rating feefo' should probably be read out first? No sure on the best approach for that.
+Individual rank buckets should be labelled as '5-star reviews: <count>' etc.
+ - fixed width on them all
+ - each fill percentage is calculated as the bucket total as % of the sum across all buckets
+
+Limitations:
+ - Sampling of unit tests rather than exhaustive.
+ - Should probably be a grid layout for the bucket breakdown section so the right-hand column is guaranteed a consistent width
+ - Not got every colour exactly right, and had to guess at the other rating level descriptions.
+ - Should probably trim the X out of 5 when it's a whole number so we don't show e.g. 4.0 out of 5
